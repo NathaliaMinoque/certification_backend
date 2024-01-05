@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
                 'borrowed_date' => now(),
                 'due_date' => now(),
                 'returned_date' => now(),
-                'total_qty' => '1',
+                'loan_status' => '0',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -86,7 +86,17 @@ class DatabaseSeeder extends Seeder
                 'borrowed_date' => now(),
                 'due_date' => now(),
                 'returned_date' => now(),
-                'total_qty' => '2',
+                'loan_status' => '0',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'id' => '3',
+                'id_member' => '1',
+                'borrowed_date' => now(),
+                'due_date' => now(),
+                'returned_date' => now(),
+                'loan_status' => '0',
                 'created_at' => now(),
                 'updated_at' => now()
             ]
@@ -110,6 +120,13 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => '3',
                 'id_loan' => '2',
+                'id_book' => '3',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'id' => '4',
+                'id_loan' => '3',
                 'id_book' => '3',
                 'created_at' => now(),
                 'updated_at' => now()

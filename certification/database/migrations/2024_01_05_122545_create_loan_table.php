@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreign('id_member')->references('id')->on('member')->onDelete('cascade');
             $table->date('borrowed_date');
             $table->date('due_date');
-            $table->date('returned_date');
-            $table->unsignedInteger('total_qty');
+            $table->date('returned_date')->nullable(true);
+            $table->boolean('loan_status');
             $table->timestamps();
         });
     }
