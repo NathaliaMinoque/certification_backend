@@ -24,4 +24,13 @@ class Book extends Model
         'created_at',
         'updated_at'
     ];
+
+
+
+    public function detailLoan()
+    {
+        return $this->belongsTo(DetailLoan::class, 'id_book');
+    }
+
+    
 }
