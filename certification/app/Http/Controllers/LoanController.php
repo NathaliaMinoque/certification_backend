@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\LoanResource;
 use App\Models\Book;
 use App\Models\DetailLoan;
 use App\Models\Loan;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class LoanController extends Controller
 {
@@ -25,7 +27,7 @@ class LoanController extends Controller
            $loan->borrowed_date = now();
            $loan->due_date = $dateInSevenDays;
            $loan->returned_date = $dateInSubDay;
-           $loan->loan_status = '0';
+           $loan->loan_status = '1';
        
 
            if($loan){
@@ -44,6 +46,11 @@ class LoanController extends Controller
                         // dd($detailLoan['id_book']);
                         $this->createDetailLoan($loanQuery, $detailLoan['id_book']);
                         
+                        $book = Book::find($detailLoan['id_book']);
+                        $book->loan_status = '1';
+
+                        // dd($book);
+                        $book->update();
                     }
                 }
 
@@ -68,9 +75,10 @@ class LoanController extends Controller
         {
             $detailLoan = new DetailLoan();
 
-            // get load id
+            // get loan id
             $idLoan = $loanData->id;
 
+          
             $detailLoan->id_loan = $idLoan;
             $detailLoan->id_book = $idBook; 
 
@@ -97,12 +105,12 @@ class LoanController extends Controller
            );
        }
 
-       public function readDetailLoan(Request $request)
+       public function readDetailLoan(String $idLoanData)
        {
-           $idDetailLoan = $request->input('id');
+        //    $idDetailLoan = $request->input('id');
    
            // dd($idBarang);
-           $detailLoan = Loan::where('id', $idDetailLoan)->get();
+           $detailLoan = Loan::where('id', $idLoanData)->get();
    
           if($detailLoan){
                return $detailLoan;
@@ -120,9 +128,41 @@ class LoanController extends Controller
        public function readAllLoan(Request $request)
        {
            $loans = Loan::get();
-   
+
+        //    $detailLoan = readDetailLoan();
+
           if($loans){
    
+            // return response()->json(
+            //     [
+            //         "status_code" => 200,
+            //         "message" => "Success Get Data",
+            //         "data" => LoanResource::collection($loans)
+            //     ], 200
+            // );
+
+               return $loans;
+          }
+          return response()->json(
+               [
+                   "status_code" => 400,
+                   "message" => "Read Failed"
+               ],
+               400
+           );
+           
+       }
+
+       public function readAllLoanMember(Request $request)
+       {
+        $loans = DB::table('loan')
+        ->join('member', 'loan.id_member', '=', 'member.id')
+        ->select('*')
+        ->where('loan_status', '1')
+        ->get();
+// dd($loans);
+          if($loans){
+
                return $loans;
           }
           return response()->json(
@@ -148,7 +188,7 @@ class LoanController extends Controller
             $loan->borrowed_date = $loan->borrowed_date;
             $loan->due_date = $loan->due_date;
             $loan->returned_date = now();
-            $loan->loan_status = '1';
+            $loan->loan_status = '0';
    
             if($loan){
                 $loan->update();
@@ -202,7 +242,7 @@ class LoanController extends Controller
            }
        }
    
-           // function untuk delete book
+           // function untuk delete loan
        public function deleteLoan(Request $request)
        {
            $idLoan= $request->input('id');

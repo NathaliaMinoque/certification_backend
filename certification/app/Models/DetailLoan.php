@@ -22,4 +22,15 @@ class DetailLoan extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function detailLoans()
+    {
+        return $this->belongsTo(Loan::class, 'id');
+    }
+
+    public function book()
+    {
+        return $this->hasMany(Book::class, 'id');
+    }
+
 }

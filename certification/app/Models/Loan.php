@@ -25,4 +25,13 @@ class Loan extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function detailLoans()
+    {
+        return $this->hasMany(DetailLoan::class, 'id_loan');
+    }
+    
+    public function member() {
+        return $this->belongsTo(Member::class, 'id_member', 'id');
+    }
 }
