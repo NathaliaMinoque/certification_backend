@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Buku Menulis',
                 'author' => 'Nathalia',
                 'published_year' => '2023',
-                'loan_status' => '1',
+                'loan_status' => '0',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Buku Mewarna',
                 'author' => 'Zefanya',
                 'published_year' => '2022',
-                'loan_status' => '1',
+                'loan_status' => '0',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -80,6 +80,34 @@ class DatabaseSeeder extends Seeder
                 'id' => '7',
                 'title' => 'Buku Primbon',
                 'author' => 'Dyah',
+                'published_year' => '2022',
+                'loan_status' => '0',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+            ,
+            [
+                'id' => '8',
+                'title' => 'Buku Fisika',
+                'author' => 'Fefe',
+                'published_year' => '2022',
+                'loan_status' => '0',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'id' => '9',
+                'title' => 'Buku Kimia',
+                'author' => 'John',
+                'published_year' => '2022',
+                'loan_status' => '0',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'id' => '10',
+                'title' => 'Buku Biologi',
+                'author' => 'Chris',
                 'published_year' => '2022',
                 'loan_status' => '0',
                 'created_at' => now(),
@@ -129,6 +157,48 @@ class DatabaseSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ]
+            ,
+            [
+                'id' => '6',
+                'name' => 'Sudirman',
+                'address' => 'Pare',
+                'phone' => '08126485053',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+            ,
+            [
+                'id' => '7',
+                'name' => 'Sumijan',
+                'address' => 'Pare',
+                'phone' => '08126485053',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'id' => '8',
+                'name' => 'Suprapto',
+                'address' => 'Pare',
+                'phone' => '08126485053',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'id' => '9',
+                'name' => 'Lala',
+                'address' => 'Pare',
+                'phone' => '08126485053',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'id' => '10',
+                'name' => 'Tata',
+                'address' => 'Pare',
+                'phone' => '08126485053',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
         ]);
 
         // mengisi database loan
@@ -136,26 +206,6 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => '1',
                 'id_member' => '1',
-                'borrowed_date' => '2023-01-06',
-                'due_date' => '2023-01-13',
-                'returned_date' => now(),
-                'loan_status' => '1',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'id' => '2',
-                'id_member' => '2',
-                'borrowed_date' => '2023-01-07',
-                'due_date' => '2023-01-14',
-                'returned_date' => now(),
-                'loan_status' => '1',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'id' => '3',
-                'id_member' => '3',
                 'borrowed_date' => '2023-01-06',
                 'due_date' => '2023-01-13',
                 'returned_date' => now(),
@@ -171,20 +221,6 @@ class DatabaseSeeder extends Seeder
                 'id' => '1',
                 'id_loan' => '1',
                 'id_book' => '1',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'id' => '2',
-                'id_loan' => '2',
-                'id_book' => '2',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'id' => '3',
-                'id_loan' => '3',
-                'id_book' => '3',
                 'created_at' => now(),
                 'updated_at' => now()
             ]

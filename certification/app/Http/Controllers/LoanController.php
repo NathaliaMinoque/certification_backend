@@ -160,8 +160,8 @@ class LoanController extends Controller
        {
         $loans = DB::table('loan')
         ->join('member', 'loan.id_member', '=', 'member.id')
-        ->select('*')
-        ->where('loan_status', '1')
+        ->select('loan.id as id', 'member.id as id_member', 'loan.borrowed_date as borrowed_date', 'loan.due_date as due_date', 'loan.returned_date as returned_date', 'loan.loan_status as loan_status', 'member.name as name', 'member.address as address', 'member.phone as phone')
+        // ->where('loan_status', '1')
         ->get();
 // dd($loans);
           if($loans){
