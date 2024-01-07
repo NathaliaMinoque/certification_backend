@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-        // function untuk create book
+        // function untuk create member
         public function createMember(Request $request)
         {
             $member = new Member();

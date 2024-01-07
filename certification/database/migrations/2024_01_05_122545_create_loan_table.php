@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // migration loan
         Schema::create('loan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_member');

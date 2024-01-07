@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 
+
+// model book
 class Book extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;

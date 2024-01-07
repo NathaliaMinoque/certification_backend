@@ -71,6 +71,7 @@ class LoanController extends Controller
            );    
        }
 
+    //    buat detail loan nnti dipanggil lgsg di create detail
        public function createDetailLoan(Loan $loanData, string $idBook)
         {
             $detailLoan = new DetailLoan();
@@ -105,6 +106,7 @@ class LoanController extends Controller
            );
        }
 
+    //    read detail loan
        public function readDetailLoan(String $idLoanData)
        {
         //    $idDetailLoan = $request->input('id');
@@ -153,6 +155,7 @@ class LoanController extends Controller
            
        }
 
+    //    get loan join member
        public function readAllLoanMember(Request $request)
        {
         $loans = DB::table('loan')
@@ -227,6 +230,7 @@ class LoanController extends Controller
            );
        }
 
+    //    update buku pengembalian
        public function updateBook(Book $book)
        {
         //    $book = Book::find($idBook);
@@ -242,7 +246,7 @@ class LoanController extends Controller
            }
        }
    
-           // function untuk delete loan
+           // function untuk delete loan dan detail loan
        public function deleteLoan(Request $request)
        {
            $idLoan= $request->input('id');

@@ -12,6 +12,8 @@ class DetailLoanResource extends JsonResource
      *
      * @return array<string, mixed>
      */
+
+    //  detail loan resource
     public function toArray(Request $request): array
     {
         return [

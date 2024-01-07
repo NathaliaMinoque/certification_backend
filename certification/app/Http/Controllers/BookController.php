@@ -61,7 +61,7 @@ class BookController extends Controller
         );
     }
 
-        // function untuk read book by id
+        // function untuk read book by availability
         public function readBookByAvailability(Request $request)
         {
             // dd($idBarang);

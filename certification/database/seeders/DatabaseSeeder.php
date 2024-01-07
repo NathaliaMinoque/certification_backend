@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        // mengisi database book
         DB::table('book')->insert([
             [
                 'id' => '1',
@@ -86,6 +87,7 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
 
+        // mengisi database member
         DB::table('member')->insert([
             [
                 'id' => '1',
@@ -129,6 +131,7 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
 
+        // mengisi database loan
         DB::table('loan')->insert([
             [
                 'id' => '1',
@@ -162,6 +165,7 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
 
+        // mengisi database detail_loan
         DB::table('detail_loan')->insert([
             [
                 'id' => '1',

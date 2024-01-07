@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class DetailLoanController extends Controller
 {
+    // function untuk read detail loan
     public function readDetailLoan(Request $request)
     {
 

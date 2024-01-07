@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 
+
+// model detail loan
 class DetailLoan extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
